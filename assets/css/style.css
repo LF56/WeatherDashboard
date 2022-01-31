@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 18px;
+}
+header {
+    font-size: large;
+    color: black;
+    background-color: rgb(245, 188, 232);
+    text-align: center;
+}
+.btn{
+    font-size: 1.5rem;
+    color: black;
+    display: block;
+    border: none;
+    padding: 12px 20px;
+    width: auto;
+    background-color: rgb(177, 150, 212);
+    text-align: center;
+}
+input{
+    width: 100;
+    padding: 12px 20px;
+}
+.future-head{
+   font-size: 30px;
+   text-align: left;
+   color:rgb(146, 39, 96)
+}
