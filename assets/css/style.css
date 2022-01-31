@@ -26,6 +26,12 @@ header {
     background-color: rgb(177, 150, 212);
     text-align: center;
 }
+.btn:hover{
+    color:lavender;
+    background-color: mediumslateblue;
+    box-shadow:black 2px;
+
+}
 input{
     width: 100;
     padding: 12px 20px;
