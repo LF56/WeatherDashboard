@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel ="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Weather Dashboard</h1>
@@ -16,9 +18,11 @@
     <div class="col-12 col-md-4">
         <div class="card">
             <h3 class="card-head">Search For A City</h3>
-            <input name="city" id="city" type="text" autofocus="true" class="city-input" />
-            <button type="search" class="btn">Search</button>
-            <form id="search-history"></form>
+            <form id="search">
+                <input name="city" id="city" type="text" autofocus="true" class="city-input" />
+                <button type="submit" input="submit" value="submit" class="btn">Search</button>
+                <form id="search-history"></form>
+            </form>
         </div>
     </div>
 
@@ -38,7 +42,7 @@
             <h3 class="future-head">5-Day Forcast</h3>
         </div>
     </div>
-    <div class= "row">
+    <div class="row">
         <div class="col-sm forcast"></div>
         <div class="col-sm forcast"></div>
         <div class="col-sm forcast"></div>
@@ -48,4 +52,5 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
