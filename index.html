@@ -18,24 +18,33 @@
             <h3 class="card-head">Search For A City</h3>
             <input name="city" id="city" type="text" autofocus="true" class="city-input" />
             <button type="search" class="btn" >Search</button>
-            <datalist id="search-history">
+            <form id="search-history"></form>
         </div>
     </div>
 
-       
+    <div class="col-12 col-md-8">
+        <div class=card>
+            <h4 id="current-city" class="city-name"></h4>
+            <img id="city-img" />
+            <p id="current-temp"></p>
+            <p id="current-humid"></p>
+            <p id="current-wind"></p>
+            <p id="current-uv"></p>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="future-forcast">
+        <div class="col-12">
+            <h3 class="future-head">5-Day Forcast</h3>
+        </div>
+    </div>
+    <div class= "row">
+        <div class="col-sm forcast"></div>
+        <div class="col-sm forcast"></div>
+        <div class="col-sm forcast"></div>
+        <div class="col-sm forcast"></div>
+        <div class="col-sm forcast"></div>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
