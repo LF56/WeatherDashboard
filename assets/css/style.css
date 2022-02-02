@@ -41,3 +41,8 @@ input{
    text-align: left;
    color:rgb(146, 39, 96)
 }
+.column2{
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}

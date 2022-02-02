@@ -19,7 +19,7 @@
         <div class="card">
             <h3 class="card-head">Search For A City</h3>
             <form id="search">
-                <input name="city" id="city" type="text" autofocus="true" class="city-input" value="Lake Mary"  />
+                <input name="city" id="city" type="text" autofocus="true" class="city-input" value="Lake Mary" />
                 <button type="button" class="btn" onclick="searchWeather()">Search</button>
                 <form id="search-history"></form>
             </form>
@@ -27,13 +27,13 @@
     </div>
 
     <div class="col-12 col-md-8">
-        <div class=card>
+        <div>
             <h4 id="current-city" class="city-name"></h4>
             <img id="city-img" />
-           <p id="current-temp"> Temp:</p>
-            <p id="current-humid">Humidity:</p>
-            <p id="current-wind">Wind:</p>
-            <p id="current-uv">UV Index:</p>
+            <p id="temp"> Temp:</p><span id="current-temp"></span>
+            <p id="humid">Humidity:</p><span id="current-humid"></span>
+            <p id="wind">Wind:</p><span id="current-wind"></span>
+            <p id="uv">UV Index:</p><span id="current-uv"></span>
         </div>
     </div>
 
@@ -43,12 +43,27 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm forcast"></div>
-        <div class="col-sm forcast"></div>
-        <div class="col-sm forcast"></div>
-        <div class="col-sm forcast"></div>
-        <div class="col-sm forcast"></div>
+        <div class="column2">
+            <div id="card-1"></div>
+        </div>
+        <div class="column2">
+            <div id="card-2"></div>
+        </div>
     </div>
+    <div class="column2">
+        <div id="card-3"></div>
+    </div>
+    </div>
+    <div class="column2">
+        <div id="card-4"></div>
+    </div>
+    </div>
+    <div class="column2">
+        <div id="card-5"></div>
+    </div>
+    </div>
+    </div>
+
 
     <script src="assets/js/script.js"></script>
 </body>
