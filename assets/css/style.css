@@ -45,4 +45,8 @@ input{
     float: left;
     width: 25%;
     padding: 0 10px;
+    display: inline;
+    background-color: rgb(227, 192, 235);
+    margin: auto;
 }
+
