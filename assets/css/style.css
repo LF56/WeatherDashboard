@@ -43,10 +43,25 @@ input{
 }
 .column2{
     float: left;
-    width: 25%;
+    width: 15%;
     padding: 0 10px;
     display: inline;
     background-color: rgb(227, 192, 235);
     margin: auto;
 }
+.current-weather{
+    float: right;
+    position: absolute;
+}
+#weather-display{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    border: 3px solid #ad2162;
+    padding: 10px;
+    
 
+}
+.span{
+    display: inline;
+}

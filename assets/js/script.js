@@ -6,7 +6,8 @@ var lon = "";
 
 var searchWeather = function () {
     var city = document.getElementById("city").value;
-
+    window.city= city
+    
     var geoData;
     console.log("searching weather: " + city);
     //call geo code API 
@@ -25,8 +26,8 @@ var searchWeather = function () {
         }
         );
 };
-
 var getWeather = function (geoData) {
+
     console.log("inside get weather");
     lat = geoData[0].lat;
     lon = geoData[0].lon;
@@ -41,12 +42,13 @@ var getWeather = function (geoData) {
             console.log(data.current.temp)
             console.log(data.current.wind_speed)
 
-            
-
             for (var i = 1; i <= 5; i++) {
                 console.log(data.daily[i])
-                var forcast = document.getElementById("card-"+i)
-
+                let getChild = document.getElementById("card-" + i);  
+                getChild.innerHTML = "";
+                
+                //remove children of card-i HERE
+                var forcast = document.getElementById("card-" + i)
 
 
                 var dateStamp = document.createElement("p")
@@ -54,7 +56,7 @@ var getWeather = function (geoData) {
                 forcast.append(dateStamp)
 
                 var pElTemp = document.createElement("p")
-                pElTemp.textContent = "Temp: "+data.daily[i].temp.day
+                pElTemp.textContent = "Temp: " + data.daily[i].temp.day
                 forcast.append(pElTemp)
 
                 var pElHumidity = document.createElement("p")
@@ -64,20 +66,17 @@ var getWeather = function (geoData) {
                 var pElWind = document.createElement("p")
                 pElWind.textContent = `Wind Speed: ${data.daily[i].wind_speed} MPH`
                 forcast.append(pElWind)
-                
+
                 var imgElIcon = document.createElement("img")
-                imgElIcon.setAttribute("src",`http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
+                imgElIcon.setAttribute("src", `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
                 forcast.append(imgElIcon)
-        
-                // var forcast1 = document.getElementById("future-forcast1").innerHTML = (data.daily[i].temp.day);
-                // console.log(data.daily[i].temp.day)
             }
-
-
-            var currentTemp = document.getElementById("current-temp").innerHTML = (data.current.temp);
-            var currentHumid = document.getElementById("current-humid").innerHTML = (data.current.humidity);
-            var currentWind = document.getElementById("current-wind").innerHTML = (data.current.wind_speed);
-            var currentUV = document.getElementById("current-uv").innerHTML = (data.current.uvi);
+            
+            document.getElementById("current-city").innerHTML = (city);
+            document.getElementById("current-temp").innerHTML = (data.current.temp);
+            document.getElementById("current-humid").innerHTML = (data.current.humidity);
+            document.getElementById("current-wind").innerHTML = (data.current.wind_speed);
+            document.getElementById("current-uv").innerHTML = (data.current.uvi);
 
 
         }
