@@ -3,29 +3,48 @@ var APIKey = "00d7248bf8115d5f89fd7b582d330c1f";
 var lat = "";
 var lon = "";
 
+var historyArr = []
+
+updateLocalStorage = function(key, data){
+    window.localStorage.setItem(key, data)
+}
 
 var searchWeather = function () {
     var city = document.getElementById("city").value;
-    window.city= city
-    
+    window.city = city
+
+    historyArr.push(city)
+    updateLocalStorage("history", JSON.stringify(historyArr))
+
+
     var geoData;
     console.log("searching weather: " + city);
+
     //call geo code API 
     fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + APIKey)
         .then(response =>
             response.json()
         )
         .then(data => {
+        
+           
             //get coordinates from response
             lat = data[0].lat;
             lon = data[0].lon;
+           
             console.log("this is lat" + lat);
             geoData = data
             console.log("call getWather");
+            
+        
             getWeather(data);
+
         }
         );
+
 };
+
+
 var getWeather = function (geoData) {
 
     console.log("inside get weather");
@@ -44,9 +63,9 @@ var getWeather = function (geoData) {
 
             for (var i = 1; i <= 5; i++) {
                 console.log(data.daily[i])
-                let getChild = document.getElementById("card-" + i);  
+                let getChild = document.getElementById("card-" + i);
                 getChild.innerHTML = "";
-                
+
                 //remove children of card-i HERE
                 var forcast = document.getElementById("card-" + i)
 
@@ -71,17 +90,18 @@ var getWeather = function (geoData) {
                 imgElIcon.setAttribute("src", `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
                 forcast.append(imgElIcon)
             }
-            
             document.getElementById("current-city").innerHTML = (city);
             document.getElementById("current-temp").innerHTML = (data.current.temp);
             document.getElementById("current-humid").innerHTML = (data.current.humidity);
             document.getElementById("current-wind").innerHTML = (data.current.wind_speed);
             document.getElementById("current-uv").innerHTML = (data.current.uvi);
 
-
         }
         );
+
 };
+
+
 
 
 
