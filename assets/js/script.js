@@ -9,12 +9,16 @@ updateLocalStorage = function(key, data){
 }
 
 
+
 var searchWeather = function () {
     var city = document.getElementById("city").value;
     window.city = city
 
     historyArr.push(city)
     updateLocalStorage("history", JSON.stringify(historyArr))
+
+
+    window.localStorage.getItem('user');
 
     var geoData;
     console.log("searching weather: " + city);
@@ -96,6 +100,7 @@ var getWeather = function (geoData) {
         );
 
 };
+
 
 
 
