@@ -24,7 +24,7 @@ var searchWeather = function () {
     console.log("searching weather: " + city);
 
     //call geo code API 
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + APIKey)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + APIKey)
         .then(response =>
             response.json()
         )
@@ -51,7 +51,7 @@ var getWeather = function (geoData) {
     lon = geoData[0].lon;
 
     //use coordinates to get weather from API
-    fetch("http://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + lat + "&lon=" + lon + "&appid=" + APIKey)
+    fetch("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + lat + "&lon=" + lon + "&appid=" + APIKey)
         .then(response =>
             response.json()
         )
@@ -86,7 +86,7 @@ var getWeather = function (geoData) {
                 forcast.append(pElWind)
 
                 var imgElIcon = document.createElement("img")
-                imgElIcon.setAttribute("src", `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
+                imgElIcon.setAttribute("src", `https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
                 forcast.append(imgElIcon)
             }
             document.getElementById("current-city").innerHTML = (city);
