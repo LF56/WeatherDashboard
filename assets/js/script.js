@@ -4,21 +4,20 @@ var lat = "";
 var lon = "";
 var historyArr = []
 
+
+//local storage 
 updateLocalStorage = function(key, data){
     window.localStorage.setItem(key, data)
 }
 
 
-
+//searching weather function
 var searchWeather = function () {
     var city = document.getElementById("city").value;
     window.city = city
 
     historyArr.push(city)
     updateLocalStorage("history", JSON.stringify(historyArr))
-
-
-    window.localStorage.getItem('user');
 
     var geoData;
     console.log("searching weather: " + city);
@@ -65,7 +64,7 @@ var getWeather = function (geoData) {
                 let getChild = document.getElementById("card-" + i);
                 getChild.innerHTML = "";
 
-                //remove children of card-i HERE
+               //five day forcast weather information
                 var forcast = document.getElementById("card-" + i)
 
 
@@ -89,6 +88,7 @@ var getWeather = function (geoData) {
                 imgElIcon.setAttribute("src", `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
                 forcast.append(imgElIcon)
             }
+            //display weather to current day box
             document.getElementById("current-city").innerHTML = (city);
             document.getElementById("current-temp").innerHTML = (data.current.temp + `\u00B0`);
             document.getElementById("current-humid").innerHTML = (data.current.humidity);
