@@ -2,12 +2,12 @@
 var APIKey = "00d7248bf8115d5f89fd7b582d330c1f";
 var lat = "";
 var lon = "";
-
 var historyArr = []
 
 updateLocalStorage = function(key, data){
     window.localStorage.setItem(key, data)
 }
+
 
 var searchWeather = function () {
     var city = document.getElementById("city").value;
@@ -15,7 +15,6 @@ var searchWeather = function () {
 
     historyArr.push(city)
     updateLocalStorage("history", JSON.stringify(historyArr))
-
 
     var geoData;
     console.log("searching weather: " + city);
@@ -26,8 +25,6 @@ var searchWeather = function () {
             response.json()
         )
         .then(data => {
-        
-           
             //get coordinates from response
             lat = data[0].lat;
             lon = data[0].lon;
@@ -43,8 +40,6 @@ var searchWeather = function () {
         );
 
 };
-
-
 var getWeather = function (geoData) {
 
     console.log("inside get weather");
@@ -61,7 +56,7 @@ var getWeather = function (geoData) {
             console.log(data.current.temp)
             console.log(data.current.wind_speed)
 
-            for (var i = 1; i <= 5; i++) {
+                for (var i = 1; i <= 5; i++) {
                 console.log(data.daily[i])
                 let getChild = document.getElementById("card-" + i);
                 getChild.innerHTML = "";
@@ -75,7 +70,7 @@ var getWeather = function (geoData) {
                 forcast.append(dateStamp)
 
                 var pElTemp = document.createElement("p")
-                pElTemp.textContent = "Temp: " + data.daily[i].temp.day
+                pElTemp.textContent = "Temp: " + data.daily[i].temp.day +`\u00B0`
                 forcast.append(pElTemp)
 
                 var pElHumidity = document.createElement("p")
@@ -91,11 +86,12 @@ var getWeather = function (geoData) {
                 forcast.append(imgElIcon)
             }
             document.getElementById("current-city").innerHTML = (city);
-            document.getElementById("current-temp").innerHTML = (data.current.temp);
+            document.getElementById("current-temp").innerHTML = (data.current.temp + `\u00B0`);
             document.getElementById("current-humid").innerHTML = (data.current.humidity);
             document.getElementById("current-wind").innerHTML = (data.current.wind_speed);
             document.getElementById("current-uv").innerHTML = (data.current.uvi);
-
+              
+        
         }
         );
 
