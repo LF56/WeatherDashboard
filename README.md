@@ -18,4 +18,4 @@ This application is made using HTML, CSS, and JavaScript.
 This application will allow you to search and display different cities. It will show you the current day, temperature, humidity, UVIndex, and wind speed. It will also show you the five day forcast for that given city.
 
 ## Completed Assignment Link
-[WeatherDashBoard](https://lf56.github.io/WeatherDashboard/)
+[WeatherDashboard](https://lf56.github.io/WeatherDashboard/)
