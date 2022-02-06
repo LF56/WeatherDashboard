@@ -51,7 +51,7 @@ var getWeather = function (geoData) {
     lon = geoData[0].lon;
 
     //use coordinates to get weather from API
-    fetch("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + lat + "&lon=" + lon + "&appid=" + APIKey)
+    fetch("http://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + lat + "&lon=" + lon + "&appid=" + APIKey)
         .then(response =>
             response.json()
         )

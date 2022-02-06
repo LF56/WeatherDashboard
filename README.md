@@ -16,5 +16,6 @@ In Week 6, we are to create a weather dashboard. This dashboard will display wea
 ## Details of Application
 This application is made using HTML, CSS, and JavaScript.
 This application will allow you to search and display different cities. It will show you the current day, temperature, humidity, UVIndex, and wind speed. It will also show you the five day forcast for that given city.
+
 ## Completed Assignment Link
 [WeatherDashBoard](https://lf56.github.io/WeatherDashboard/)
