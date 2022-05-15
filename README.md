@@ -19,3 +19,12 @@ This application will allow you to search and display different cities. It will 
 
 ## Completed Assignment Link
 [WeatherDashboard](https://lf56.github.io/WeatherDashboard/)
+
+# Questions
+
+Email me for contact/questions: [Here!](leah.fox7@gmail.com)
+<br>
+Connect with me on GitHub: [Here!](https://github.com/LF56)
+<br>
+Connect with me on LinkedIn: [Here!](https://www.linkedin.com/in/leah-fox-37963b1a2/)
+
